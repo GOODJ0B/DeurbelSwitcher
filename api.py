@@ -32,7 +32,7 @@ def doorbellOff():
 
 
 @app.route('/check', methods=['GET'])
-def doorbellOff():
+def checkDoorbellStatus():
     global doorbellIsOn
     return doorbellIsOn
 
