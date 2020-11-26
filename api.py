@@ -19,7 +19,7 @@ def doorbellOn():
     GPIO.cleanup()
     global doorbellIsOn
     doorbellIsOn = True
-    return str(doorbellIsOn)
+    return str(doorbellIsOn).lower()
 
 
 @app.route('/off', methods=['GET'])
@@ -28,13 +28,13 @@ def doorbellOff():
     GPIO.setup(doorbellGPIO, GPIO.OUT)
     global doorbellIsOn
     doorbellIsOn = False
-    return str(doorbellIsOn)
+    return str(doorbellIsOn).lower()
 
 
 @app.route('/check', methods=['GET'])
 def checkDoorbellStatus():
     global doorbellIsOn
-    return str(doorbellIsOn)
+    return str(doorbellIsOn).lower()
 
 
 app.run(host='0.0.0.0')
